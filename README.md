@@ -45,23 +45,40 @@ References
 
 
 Alkan, C., Coe, B. P., & Eichler, E. E. (2011). Genome structural variation discovery and genotyping. Nature Reviews Genetics, 12(5), 363–376. https://doi.org/10.1038/nrg2958
+
 Amarasinghe, S. L., Su, S., Dong, X., Zappia, L., Ritchie, M. E., & Gouil, Q. (2020). Opportunities and challenges in long-read sequencing data analysis. Genome Biology, 21, 30. https://doi.org/10.1186/s13059-020-1935-5
+
 Danecek, P., Bonfield, J. K., Liddle, J., et al. (2021). Twelve years of SAMtools and BCFtools. GigaScience, 10(2), giab008. https://doi.org/10.1093/gigascience/giab008
+
 Didelot, X., Bowden, R., Wilson, D. J., Peto, T. E. A., & Crook, D. W. (2012). Transforming clinical microbiology with bacterial genome sequencing. Nature Reviews Genetics, 13(9), 601–612. https://doi.org/10.1038/nrg3226
+
 Kolmogorov, M., Yuan, J., Lin, Y., & Pevzner, P. A. (2019). Assembly of long, error-prone reads using repeat graphs. Nature Biotechnology, 37, 540–546. https://doi.org/10.1038/s41587-019-0072-8
+
 Koren, S., & Phillippy, A. M. (2015). One chromosome, one contig: Complete microbial genomes from long-read sequencing and assembly. Current Opinion in Microbiology, 23, 110–120. https://doi.org/10.1016/j.mib.2014.11.014
+
 Land, M. L., Hyatt, D., Jun, S.-R., et al. (2015). Insights from 20 years of bacterial genome sequencing. Functional & Integrative Genomics, 15, 141–161. https://doi.org/10.1007/s10142-015-0433-4
+
 Li, H. (2018). Minimap2: Pairwise alignment for nucleotide sequences. Bioinformatics, 34(18), 3094–3100. https://doi.org/10.1093/bioinformatics/bty191
 Li, H., Handsaker, B., Wysoker, A., et al. (2009). The Sequence Alignment/Map format and SAMtools. Bioinformatics, 25(16), 2078–2079. https://doi.org/10.1093/bioinformatics/btp352
+
 Li, R., Zhu, H., Ruan, J., Qian, W., Fang, X., Shi, Z., Li, Y., Li, S., Shan, G., Kristiansen, K., Yang, H., Wang, J., & Wang, J. (2010). De novo assembly of human genomes with massively parallel short read sequencing. Genome Research, 20(2), 265–272. https://doi.org/10.1101/gr.097261.109
+
 Miller, J. R., Koren, S., & Sutton, G. (2010). Assembly algorithms for next-generation sequencing data. Genomics, 95(6), 315–327.
 Nagarajan, N., & Pop, M. (2013). Sequence assembly demystified. Nature Reviews Genetics, 14(3), 157–167. https://doi.org/10.1038/nrg3367
+
 O’Leary, N. A., Wright, M. W., Brister, J. R., et al. (2016). Reference sequence (RefSeq) database at NCBI: Current status, taxonomic expansion, and functional annotation. Nucleic Acids Research, 44(D1), D733–D745. https://doi.org/10.1093/nar/gkv1189
+
 Paten, B., Novak, A. M., Eizenga, J. M., & Garrison, E. (2017). Genome graphs and the evolution of genome inference. Genome Research, 27(5), 665–676. https://doi.org/10.1101/gr.214155.116
+
 Pevsner, J. (2009). Bioinformatics and functional genomics (2nd ed.). Wiley-Blackwell.
+
 Pevzner, P. A., Tang, H., & Waterman, M. S. (2001). An Eulerian path approach to DNA fragment assembly. Proceedings of the National Academy of Sciences of the United States of America, 98(17), 9748–9753. https://doi.org/10.1073/pnas.171285098
+
 Robinson, J. T., Thorvaldsdóttir, H., Winckler, W., et al. (2011). Integrative Genomics Viewer. Nature Biotechnology, 29, 24–26. https://doi.org/10.1038/nbt.1754
+
 Treangen, T. J., & Salzberg, S. L. (2012). Repetitive DNA and next-generation sequencing: Computational challenges and solutions. Nature Reviews Genetics, 13(1), 36–46. https://doi.org/10.1038/nrg3117
+
 Waterston, R. H. (2002). On the sequencing of the human genome. Proceedings of the National Academy of Sciences of the United States of America, 99(6), 3712–3716. https://doi.org/10.1073/pnas.042692499
+
 Wick, R. R., Judd, L. M., & Holt, K. E. (2021). Performance of neural network basecalling tools for Oxford Nanopore sequencing. Genome Biology, 22, 129. https://doi.org/10.1186/s13059-021-02355-5
 
