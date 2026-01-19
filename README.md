@@ -1,7 +1,7 @@
 # 6110Assignment1
 This repository contains the entirety of Assignment 1 for BINF 6110, Genomic Methods for Bioinformatics
 
-Introduction
+# Introduction
 
 
 	Genome assembly is conducted using many fragments of DNA sequences, and determining their position in relation to each other to create a representation of the genome from which they originated (Pevsner, 2009). First, sequence fragments, called reads, are read by a sequencing machine, with sequences constructed from overlaps (Pevsner, 2009). Once this process is completed, these sequences can be aligned with scaffolds, non-contiguous sequences separated by gaps of known length (Waterson, 2002). This is done so that complete genomes can be annotated and compared against for variant detection (Li et al, 2010). 
@@ -18,30 +18,30 @@ Our workflow has several advantages and disadvantages. It leverages the strength
 
 
 
-Proposed Methods
+# Proposed Methods
 
 
-Consensus Genome Assembly
+## Consensus Genome Assembly
 
 	Raw Nanopore FASTQ reads generated using R10 chemistry will be assembled de novo using Flye (v2.9), a genome assembler optimized for long, error-prone reads (Kolmogorov et al, 2019). The expected genome size will be set to 5Mb, consistent with known Salmonella enterica genomes (Land et al, 2015), and in all other parameters the defaults will be used.
 	
-Reference Genome Acquisition
+## Reference Genome Acquisition
 
 The reference genome for Salmonella enterica will be downloaded from the NCBI RefSeq database as a FASTA file and associated annotation files (if available). These genomes are curated and non-redundant, making them suitable for comparative analysis (O’Leary et al, 2016). 
 
-Genome Alignment and Variant Calling
+## Genome Alignment and Variant Calling
 
 	The assembled consensus genome will be aligned to the reference genome using Minimap2 (v2.26), using the --nano-raw command due to the raw reads supplied from which to create our consensus genome. Minimap2 is widely used for long-read data and provides efficient and accurate whole-genome alignments (Li, 2018).
 	
 Following alignment, variants relative to the reference genome will be identified. Alignment files will be converted and sorted using SAMtools (v1.20) (Li et al, 2009). Variant calling will be performed using bcftools (v1.20) to identify single nucleotide polymorphisms (SNPs) and small insertions and deletions (indels) (Danacek et al, 2021). Variant filtering will be applied to remove low-confidence calls, accounting for Nanopore-specific error profiles.
 
-Visualization and Validation
+## Visualization and Validation
 
 Genome alignments and called variants will be visualized using IGV (Integrative Genomics Viewer) to enable manual inspection of variant calls and assessment of alignment quality across the genome (Robinson et al, 2011). Visualization will focus on regions containing dense variant clusters, indels, or potential misassemblies. This step will serve as an additional validation of the consensus genome and provide insight into genomic differences between the assembled strain and the reference.
 
 
 
-References
+# References
 
 
 Alkan, C., Coe, B. P., & Eichler, E. E. (2011). Genome structural variation discovery and genotyping. Nature Reviews Genetics, 12(5), 363–376. https://doi.org/10.1038/nrg2958
