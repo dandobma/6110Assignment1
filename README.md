@@ -118,7 +118,7 @@ minimap2 -ax map-ont reference/NC_003197.2.fasta SRR32410565.fastq.gz | samtools
 samtools index reads_vs_reference.bam
 ```
 
-# Visualization
+## Visualization
 
 Alignments were visualized in IGV (Integrative Genomics Viewer). Two complementary views were used. The first was a read-level view (reads_vs_references.bam), assessing sequencing depth and observing consistent SNP/indel patterns relative to the reference. The second was a contig-level view (assembly_vs_reference.bam) for evaluating how assembled contigs map across the reference genome and identifying contig boundaries and gaps. In IGV, the reference FASTA (reference/NC_003197.2.fasta) was loaded first, followed by the appropriate BAM file(s) for visualization and screenshot generation.
 
