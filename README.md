@@ -153,6 +153,11 @@ Overall, this analysis demonstrates the effectiveness of long-read sequencing fo
 **Figure 2.** IGV visualization of Flye-assembled contigs aligned to the *Salmonella enterica* LT2 reference genome. Each alignment represents a contig rather than individual sequencing reads. The presence of multiple contigs and gaps between alignments reflects unresolved repetitive regions and structural complexity in the genome, while overall colinearity indicates consistency between the assembled genome and the reference.
 
 
+## Data Availability
+
+Raw sequencing reads (FASTQ) and large alignment files (BAM) are not included here due to size constraints and grading instructions. All analyses are reproducible using the commands provided under Methods and publicly available data (SRA SRR32410565 and RefSeq NC_003197.2).
+
+
 # References
 
 
