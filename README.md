@@ -148,7 +148,7 @@ Overall, this analysis demonstrates the effectiveness of long-read sequencing fo
 **Figure 1.** IGV visualization of Oxford Nanopore reads aligned to the *Salmonella enterica* LT2 reference genome (NC_003197.2). The coverage track indicates high and relatively uniform sequencing depth across the region shown. Multiple nucleotide mismatches are consistently supported by many overlapping reads, indicating true single nucleotide polymorphisms (SNPs), while additional low-frequency mismatches reflect the characteristic error profile of long-read sequencing.
 
 ## Figure 2. Assembly-to-reference alignment visualized in IGV
-![IGV assembly-level alignment](assembly_vs_reference.png)
+![IGV assembly-level alignment](images/assembly_vs_reference.png)
 
 **Figure 2.** IGV visualization of Flye-assembled contigs aligned to the *Salmonella enterica* LT2 reference genome. Each alignment represents a contig rather than individual sequencing reads. The presence of multiple contigs and gaps between alignments reflects unresolved repetitive regions and structural complexity in the genome, while overall colinearity indicates consistency between the assembled genome and the reference.
 
