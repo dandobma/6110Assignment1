@@ -40,6 +40,32 @@ Following alignment, variants relative to the reference genome will be identifie
 Genome alignments and called variants will be visualized using IGV (Integrative Genomics Viewer) to enable manual inspection of variant calls and assessment of alignment quality across the genome (Robinson et al, 2011). Visualization will focus on regions containing dense variant clusters, indels, or potential misassemblies. This step will serve as an additional validation of the consensus genome and provide insight into genomic differences between the assembled strain and the reference.
 
 
+# Final Methods
+
+
+
+
+# Discussion
+
+In this study, long-read Oxford Nanopore sequencing data were used to assemble a Salmonella enterica genome de novo and to compare the resulting consensus assembly to a curated reference genome. The final Flye assembly produced a genome of approximately 5.10 Mb distributed across 11 contigs, consistent with the expected genome size for S. enterica. The presence of multiple contigs rather than a single closed chromosome indicates incomplete resolution of certain genomic regions, most likely due to repetitive sequences and structural complexity that remain challenging even with long-read sequencing technologies.
+
+Read-level alignment of raw Nanopore reads to the reference genome provided complementary evidence for both coverage quality and sequence variation (Figure 1). Visualization in IGV showed high and relatively uniform sequencing depth across most of the genome, indicating that the sequencing data sufficiently covered the majority of genomic regions. Within these regions, numerous nucleotide differences relative to the reference sequence were observed. Importantly, many of these differences appeared as consistent vertical stacks of mismatches supported by a large number of overlapping reads, strongly suggesting that they represent true single nucleotide polymorphisms (SNPs) rather than sporadic sequencing errors.
+
+Whole-genome alignment of the assembled contigs to the RefSeq reference genome (S. enterica serovar Typhimurium LT2, NC_003197.2) revealed largely colinear alignment across the chromosome (Figure 2). Most contigs mapped cleanly to corresponding regions of the reference, supporting the overall correctness of the assembly at the structural level. However, the alignment also revealed gaps between contigs, reflecting regions where the assembler was unable to extend contigs across repetitive or ambiguous sequences. Such regions are commonly associated with rRNA operons, insertion sequences, and other mobile genetic elements in bacterial genomes, which can exceed the resolving power of individual reads and complicate assembly graphs even in long-read datasets.
+
+The observed abundance of SNPs likely reflects a combination of biological divergence and technical factors. The reference genome used for comparison represents a well-characterized laboratory strain, whereas the sequenced isolate represents a distinct strain of S. enterica. Natural genetic variation between strains is therefore expected and may account for a substantial fraction of the consistently supported SNPs observed. At the same time, additional low-frequency mismatches were visible throughout the read alignments, often supported by only one or a few reads. These mismatches are consistent with the known error profile of Oxford Nanopore sequencing, which, despite improvements associated with R10 chemistry, still exhibits higher base-level error rates than short-read sequencing technologies.
+
+Regions corresponding to contig boundaries in the assembly frequently coincided with areas of complex or ambiguous read alignments in the read-to-reference visualization (Figures 1 and 2). These regions displayed abrupt changes in alignment patterns and clusters of mismatches, suggesting that unresolved repeats and local structural complexity contributed both to assembly fragmentation and to alignment uncertainty. This concordance between assembly-level and read-level analyses highlights the value of integrating multiple visualization strategies: contig-to-reference alignment provides insight into large-scale structural organization, while read-to-reference alignment enables detailed inspection of sequence variation and sequencing artifacts.
+
+Several limitations of this workflow should be noted. The exclusive reliance on long-read sequencing data likely contributed to residual base-level errors and a fragmented assembly structure. Additional polishing steps or the incorporation of complementary short-read data could improve consensus accuracy and contiguity. Furthermore, comparison to a single reference genome introduces the possibility of reference bias, potentially obscuring novel or highly divergent regions unique to the assembled strain.
+
+Overall, this analysis demonstrates the effectiveness of long-read sequencing for de novo assembly and comparative analysis of bacterial genomes. While the assembly captured the majority of the S. enterica genome and aligned well to the reference at a structural level (Figure 2), read-level visualization revealed both true biological variation and characteristic long-read sequencing errors (Figure 1). Together, these results illustrate the strengths and limitations of long-read-based genome assembly and emphasize the importance of combining assembly, alignment, and visualization approaches for comprehensive genome evaluation.
+
+
+# Figures
+
+
+
 
 # References
 
