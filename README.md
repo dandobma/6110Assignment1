@@ -43,6 +43,84 @@ Genome alignments and called variants will be visualized using IGV (Integrative 
 # Final Methods
 
 
+## Computing Environment
+
+All analyses were performed locally on Windows Subsystem for Linux (WSL2) using Ubuntu. Software was installed and managed in a conda environment (flye). Commands below were executed from a project working directory (~/6110Assignment1).
+
+## Data Acquisition and FASTQ Conversion
+
+Oxford Nanopore long reads (R10 chemistry) for Salmonella enterica were obtained from NCBI SRA run SRR32410565 using a direct download of the SRA object. The SRA file was converted to FASTQ using SRA Toolkit (fasterq-dump), producing a long-read FASTQ file. The FASTQ was then compressed to reduce disk usage.
+
+```bash
+# Convert SRA -> FASTQ
+conda activate flye
+conda install -c bioconda -c conda-forge sra-tools -y
+
+# One-time SRA toolkit configuration
+vdb-config --interactive
+
+# Convert to FASTQ (threads chosen to keep system responsive)
+fasterq-dump SRR32410565 --threads 8
+
+# Compress FASTQ
+gzip SRR32410565.fastq
+```
+
+Read-length inspection was performed to confirm long-read characteristics:
+
+```bash
+zcat SRR32410565.fastq.gz | awk 'NR%4==2{print length($0)}' | head
+```
+
+## De Novo Genome Assembly (Flye)
+
+De novo assembly was performed using Flye (v2.9), an assembler designed for long, error-prone reads. The read type was specified as raw Oxford Nanopore reads (--nano-raw). The expected genome size was set to 5 Mb to reflect Salmonella enterica genome size. To reduce runtime and limit redundant coverage while maintaining robust bacterial assembly performance, assembly coverage was capped at 60× using --asm-coverage 60.
+
+```bash
+flye --nano-raw SRR32410565.fastq.gz --out-dir flye_out --threads 8 --asm-coverage 60 --genome-size 5m
+```
+
+The final assembly was produced as flye_out/assembly.fasta. Assembly contig statistics were obtained from flye_out/assembly_info.txt.
+
+## Reference Genome Acquisition (NCBI RefSeq)
+
+A reference genome for comparative analysis was downloaded from NCBI RefSeq as the curated chromosome sequence for Salmonella enterica serovar Typhimurium strain LT2 (NC_003197.2). The reference genome was saved as a FASTA file:
+
+```bash
+mkdir -p reference
+cd reference
+
+wget "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=NC_003197.2&rettype=fasta&retmode=text" -O NC_003197.2.fasta
+```
+
+## Genome Comparison by Alignment (minimap2) and BAM Processing (SAMtools)
+
+Comparative analysis was performed via sequence alignment using minimap2 (v2.26) and SAMtools (v1.20).
+
+### Assembly to Reference Alignment
+
+The Flye contig assembly was aligned to the reference genome using minimap2 with assembly-to-reference presets (-x asm5). Output was generated in SAM format (-a) and converted to a sorted, indexed BAM for visualization.
+
+```bash
+minimap2 -ax asm5 reference/NC_003197.2.fasta flye_out/assembly.fasta > assembly_vs_reference.sam
+
+samtools sort -o assembly_vs_reference.bam assembly_vs_reference.sam
+samtools index assembly_vs_reference.bam
+```
+
+### Read to Reference Alignment
+
+Raw Nanopore reads were aligned directly to the reference genome using minimap2’s Oxford Nanopore read-mapping preset (-x map-ont). The resulting alignments were sorted and indexed for IGV visualization.
+
+```bash
+minimap2 -ax map-ont reference/NC_003197.2.fasta SRR32410565.fastq.gz | samtools sort -o reads_vs_reference.bam
+
+samtools index reads_vs_reference.bam
+```
+
+# Visualization
+
+Alignments were visualized in IGV (Integrative Genomics Viewer). Two complementary views were used. The first was a read-level view (reads_vs_references.bam), assessing sequencing depth and observing consistent SNP/indel patterns relative to the reference. The second was a contig-level view (assembly_vs_reference.bam) for evaluating how assembled contigs map across the reference genome and identifying contig boundaries and gaps. In IGV, the reference FASTA (reference/NC_003197.2.fasta) was loaded first, followed by the appropriate BAM file(s) for visualization and screenshot generation.
 
 
 # Discussion
