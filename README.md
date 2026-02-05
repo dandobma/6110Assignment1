@@ -143,7 +143,7 @@ Overall, this analysis demonstrates the effectiveness of long-read sequencing fo
 # Figures
 
 ## Figure 1. Read-to-reference alignment visualized in IGV
-![IGV read-level alignment](images/reads_vs_references.png)
+![IGV read-level alignment](images/reads_vs_reference.png)
 
 **Figure 1.** IGV visualization of Oxford Nanopore reads aligned to the *Salmonella enterica* LT2 reference genome (NC_003197.2). The coverage track indicates high and relatively uniform sequencing depth across the region shown. Multiple nucleotide mismatches are consistently supported by many overlapping reads, indicating true single nucleotide polymorphisms (SNPs), while additional low-frequency mismatches reflect the characteristic error profile of long-read sequencing.
 
